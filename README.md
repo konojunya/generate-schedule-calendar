@@ -1,1 +1,1 @@
-# generate-schedule-calender
+# generate-schedule-calendar
