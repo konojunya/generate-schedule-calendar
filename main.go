@@ -1,11 +1,14 @@
 package main
 
 import (
-  "./Utils"
-  "fmt"
+	"./Utils"
+	"fmt"
 )
 
 func main() {
-  datas := fileUtils.Read("schedule.csv")
-  fmt.Println(datas)
+	schedules := Utils.Read("schedule.csv")
+
+	for _, schedule := range schedules {
+		fmt.Println(schedule)
+	}
 }

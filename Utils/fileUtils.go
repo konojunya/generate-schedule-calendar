@@ -1,31 +1,31 @@
-package fileUtils
+package Utils
 
 import (
-  "encoding/csv"
-  "log"
-  "os"
+	"encoding/csv"
+	"log"
+	"os"
 )
 
 func failOnError(err error) {
-  if err != nil {
-    log.Fatal("Error: ",err)
-  }
+	if err != nil {
+		log.Fatal("Error: ", err)
+	}
 }
 
 func Read(filename string) [][]string {
-  fr, err := os.Open(filename)
-  failOnError(err)
-  defer fr.Close()
+	fr, err := os.Open(filename)
+	failOnError(err)
+	defer fr.Close()
 
-  r := csv.NewReader(fr)
-  rows, err := r.ReadAll()
-  failOnError(err)
+	r := csv.NewReader(fr)
+	rows, err := r.ReadAll()
+	failOnError(err)
 
-  var datas [][]string
+	var datas [][]string
 
-  for _, row := range rows {
-    datas = append(datas,row)
-  }
+	for _, row := range rows {
+		datas = append(datas, row)
+	}
 
-  return datas
+	return datas
 }
