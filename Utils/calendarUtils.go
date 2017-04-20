@@ -58,7 +58,7 @@ func tokenCacheFile() (string, error) {
 
 	tokenCacheDir := filepath.Join(usr.HomeDir, ".credentials")
 	os.MkdirAll(tokenCacheDir, 0700)
-	return filepath.Join(tokenCacheDir, url.QueryEscape("calendar-go-quickstart.json")), err
+	return filepath.Join(tokenCacheDir, url.QueryEscape("generate-schedule-calendar.json")), err
 }
 
 func tokenFromFile(file string) (*oauth2.Token, error) {
