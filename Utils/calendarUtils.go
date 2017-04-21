@@ -42,7 +42,7 @@ func SetSchedule(schedule []string) *Schedule {
 	}
 }
 
-func CreateEvent(schedule *Schedule,ch chan string) {
+func CreateEvent(schedule *Schedule){
 	ctx := context.Background()
 	b, err := ioutil.ReadFile("client_secret.json")
 	errorLog("Unable to read client secret file: ", err)
@@ -57,14 +57,12 @@ func CreateEvent(schedule *Schedule,ch chan string) {
 	_, err = srv.Events.Insert(CALENDAR_ID, createEventData(schedule)).Do()
 	errorLog("Unable to create event. ", err)
 
-	ch <- schedule.Title
-	return
+	fmt.Println(schedule.Title)
 }
 
-func TestRun(s *Schedule, ch chan string){
-	time.Sleep(1 * time.Second)
-	ch <- s.Title
-	return
+func TestRun(s *Schedule){
+	time.Sleep(1 * time.Millisecond)
+	fmt.Println(s.Title)
 }
 
 func errorLog(message string, err error) {
