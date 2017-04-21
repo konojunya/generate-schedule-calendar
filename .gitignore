@@ -29,3 +29,6 @@ client_secret.json
 schedule.csv
 config.tml
 main
+
+Godeps/Readme
+Godeps/_workspace

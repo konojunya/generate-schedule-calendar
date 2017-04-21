@@ -1,0 +1,61 @@
+{
+	"ImportPath": "github.com/konojunya/generate-schedule-calendar",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v74",
+	"Deps": [
+		{
+			"ImportPath": "cloud.google.com/go/compute/metadata",
+			"Comment": "v0.7.0-113-g01b9e8c",
+			"Rev": "01b9e8cbca61bf2c704946d6f1790ec412519180"
+		},
+		{
+			"ImportPath": "github.com/BurntSushi/toml",
+			"Comment": "v0.3.0",
+			"Rev": "b26d9c308763d68093482582cea63d69be07a0f0"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "c764672d0ee39ffd83cfcb375804d3181302b62b"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context/ctxhttp",
+			"Rev": "c764672d0ee39ffd83cfcb375804d3181302b62b"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2",
+			"Rev": "a6bd8cefa1811bd24b86f8902872e4e8225f74c4"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/google",
+			"Rev": "a6bd8cefa1811bd24b86f8902872e4e8225f74c4"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/internal",
+			"Rev": "a6bd8cefa1811bd24b86f8902872e4e8225f74c4"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/jws",
+			"Rev": "a6bd8cefa1811bd24b86f8902872e4e8225f74c4"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/jwt",
+			"Rev": "a6bd8cefa1811bd24b86f8902872e4e8225f74c4"
+		},
+		{
+			"ImportPath": "google.golang.org/api/calendar/v3",
+			"Rev": "fbbaff1827317122a8a0e1b24de25df8417ce87b"
+		},
+		{
+			"ImportPath": "google.golang.org/api/gensupport",
+			"Rev": "fbbaff1827317122a8a0e1b24de25df8417ce87b"
+		},
+		{
+			"ImportPath": "google.golang.org/api/googleapi",
+			"Rev": "fbbaff1827317122a8a0e1b24de25df8417ce87b"
+		},
+		{
+			"ImportPath": "google.golang.org/api/googleapi/internal/uritemplates",
+			"Rev": "fbbaff1827317122a8a0e1b24de25df8417ce87b"
+		}
+	]
+}
