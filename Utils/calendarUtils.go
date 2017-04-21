@@ -21,28 +21,28 @@ import (
 const CALENDAR_ID string = "osaka.hal.iw13a727@gmail.com"
 
 type Schedule struct {
-	Title string
+	Title    string
 	Location string
-	Year string
-	Month string
-	Day string
-	Start string
-	End string
+	Year     string
+	Month    string
+	Day      string
+	Start    string
+	End      string
 }
 
 func SetSchedule(schedule []string) *Schedule {
 	return &Schedule{
-		Title: schedule[0],
+		Title:    schedule[0],
 		Location: schedule[1],
-		Year: schedule[2],
-		Month: schedule[3],
-		Day: schedule[4],
-		Start: schedule[5],
-		End: schedule[6],
+		Year:     schedule[2],
+		Month:    schedule[3],
+		Day:      schedule[4],
+		Start:    schedule[5],
+		End:      schedule[6],
 	}
 }
 
-func CreateEvent(schedule *Schedule){
+func CreateEvent(schedule *Schedule) {
 	ctx := context.Background()
 	b, err := ioutil.ReadFile("client_secret.json")
 	errorLog("Unable to read client secret file: ", err)
@@ -60,7 +60,7 @@ func CreateEvent(schedule *Schedule){
 	fmt.Println(schedule.Title)
 }
 
-func TestRun(s *Schedule){
+func TestRun(s *Schedule) {
 	time.Sleep(1 * time.Millisecond)
 	fmt.Println(s.Title)
 }
