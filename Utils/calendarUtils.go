@@ -52,9 +52,7 @@ func SetSchedule(schedule []string) *Schedule {
 func GetCalendarId() string {
 	var config Config
 	_, err := toml.DecodeFile("config.tml", &config)
-	if err != nil {
-		panic(err)
-	}
+	failOnError(err)
 	return config.Calendar.Id
 }
 
