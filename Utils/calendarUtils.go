@@ -12,13 +12,20 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/BurntSushi/toml"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/calendar/v3"
 )
 
-const CALENDAR_ID string = "osaka.hal.iw13a727@gmail.com"
+type Config struct {
+	Calendar CalendarConfig
+}
+
+type CalendarConfig struct {
+	Id string `toml:"id"`
+}
 
 type Schedule struct {
 	Title    string
@@ -42,7 +49,14 @@ func SetSchedule(schedule []string) *Schedule {
 	}
 }
 
-func CreateEvent(schedule *Schedule) {
+func GetCalendarId() string {
+	var config Config
+	_, err := toml.DecodeFile("config.tml", &config)
+	failOnError(err)
+	return config.Calendar.Id
+}
+
+func CreateEvent(schedule *Schedule, calendarId string) {
 	ctx := context.Background()
 	b, err := ioutil.ReadFile("client_secret.json")
 	errorLog("Unable to read client secret file: ", err)
@@ -54,7 +68,7 @@ func CreateEvent(schedule *Schedule) {
 	srv, err := calendar.New(client)
 	errorLog("Unable to retrieve calendar Client: ", err)
 
-	_, err = srv.Events.Insert(CALENDAR_ID, createEventData(schedule)).Do()
+	_, err = srv.Events.Insert(calendarId, createEventData(schedule)).Do()
 	errorLog("Unable to create event. ", err)
 
 	fmt.Println(schedule.Title)

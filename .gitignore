@@ -25,3 +25,10 @@ _testmain.go
 
 client_secret.json
 .idea/
+
+schedule.csv
+config.tml
+main
+
+Godeps/Readme
+Godeps/_workspace
