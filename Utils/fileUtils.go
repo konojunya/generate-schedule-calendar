@@ -21,11 +21,5 @@ func Read(filename string) [][]string {
 	rows, err := r.ReadAll()
 	failOnError(err)
 
-	var datas [][]string
-
-	for _, row := range rows {
-		datas = append(datas, row)
-	}
-
-	return datas
+	return rows
 }
